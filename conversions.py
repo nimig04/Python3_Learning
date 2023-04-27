@@ -1,0 +1,45 @@
+# Calculates various math conversions: F to C, C to F, Force in Newtons, and Energy in Joules.
+
+# Fahrenheit to Celsius Converter
+def f_to_c(f_temp):
+  c_temp = (f_temp - 32) * 5/9
+  return print(c_temp)
+# f_to_c(80)
+# f100_in_celsius = f_to_c(100)
+
+# Celsius to Fahrenheit Converter
+def c_to_f(c_temp):
+  f_temp = c_temp * (9/5) + 32
+  return print(f_temp)
+# c0_in_fahrenheit = c_to_f(0)
+
+# Use the Force
+
+# Variables
+train_mass = 22680
+train_acceleration = 10
+train_distance = 100
+bomb_mass = 1
+
+# Calculate Force
+def get_force(mass, acceleration):
+  return mass * acceleration
+train_force = get_force(train_mass, train_acceleration)
+print(train_force)
+print(f"The GE train supplies {train_force} Newtons of force.")
+
+# Calculate Energy
+def get_energy(mass, c = 3*10**8):
+  bomb_energy = mass * c**2
+  return bomb_energy
+print(get_energy(bomb_mass))
+print(f"A 1kg bomb supplies {get_energy(bomb_mass)} Joules")
+
+# Calculate Work
+def get_work(mass, acceleration, distance):
+  force = get_force(mass, acceleration)
+  work = force * distance
+  return work
+train_work = get_work(train_mass, train_acceleration, train_distance)
+print(f"The GE train does {train_work} Joules of work over {train_distance} meters.")
+  
